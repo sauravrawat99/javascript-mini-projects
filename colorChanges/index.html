@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Schema Changer</title>
+    <style>
+      .container {
+        text-align: center;
+      }
+      .box {
+        display: inline-block;
+        margin: 10px;
+        padding: 20px;
+        border: 2px solid black;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Theme Changer</h1>
+      <span
+        class="box"
+        data-color="blue"
+        style="background-color: blue; color: white"
+        >BLUE</span
+      >
+      <span class="box" data-color="yellow" style="background-color: yellow"
+        >YELLOW</span
+      >
+      <span
+        class="box"
+        data-color="green"
+        style="background-color: green; color: white"
+        >GREEN</span
+      >
+      <span class="box" data-color="pink" style="background-color: pink"
+        >PINK</span
+      >
+    </div>
+    <script>
+      const boxes = document.querySelectorAll(".box");
+      const body = document.body;
+
+      boxes.forEach((box) => {
+        box.addEventListener("click", () => {
+          const color = box.getAttribute("data-color");
+          body.style.backgroundColor = color;
+        });
+      });
+    </script>
+  </body>
+</html>
